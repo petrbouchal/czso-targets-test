@@ -107,10 +107,10 @@
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.14.1",
+      "Version": "1.14.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9ae6c71a9c77a228c99d403f800c44c8"
+      "Hash": "36b67b5adf57b292923f5659f5f0c853"
     },
     "desc": {
       "Package": "desc",
