@@ -24,7 +24,8 @@
 # SOFTWARE.
 
 on:
-  schedule: 0 10 * * TUE
+  schedule:
+    - cron: '0 10 * * TUE'
   push:
     branches:
       - main
