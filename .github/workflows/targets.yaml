@@ -91,7 +91,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Run targets pipeline
-        run: targets::tar_make()
+        run: rmarkdown::render('index.Rmd', output_dir = 'docs')
         shell: Rscript {0}
 
       - name: Identify files that the targets pipeline produced
