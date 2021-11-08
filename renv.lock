@@ -224,6 +224,13 @@
       "Repository": "CRAN",
       "Hash": "526c484233f42522278ab06fb185cb26"
     },
+    "htmlwidgets": {
+      "Package": "htmlwidgets",
+      "Version": "1.5.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "76147821cd3fcd8c4b04e1ef0498e7fb"
+    },
     "httr": {
       "Package": "httr",
       "Version": "1.4.2",
@@ -286,6 +293,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "41287f1ac7d28a92f0a286ed507928d3"
+    },
+    "markdown": {
+      "Package": "markdown",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "61e4a10781dd00d7d81dd06ca9b94e95"
     },
     "mime": {
       "Package": "mime",
@@ -480,6 +494,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ecf749a1b39ea72bd9b51b76292261f1"
+    },
+    "visNetwork": {
+      "Package": "visNetwork",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "99b515a03efb8dcc4e4be337f37bf087"
     },
     "vroom": {
       "Package": "vroom",
