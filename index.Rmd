@@ -1,0 +1,61 @@
+---
+title: "Untitled"
+author: "Petr Bouchal"
+date: "11/9/2021"
+output: html_document
+---
+
+```{r}
+library(targets)
+```
+
+
+# Output
+
+You can retrieve results from the `_targets/` data store using `tar_read()` or `tar_load()`.
+
+```{r readurl, message = FALSE}
+tar_read(czs_live_url)
+```
+
+
+```{r readurl-frozen, message = FALSE}
+tar_read(czs_frozen_url)
+```
+
+```{r readfile, message = FALSE}
+tar_load(czs_live_file)
+
+czs_live_file
+file.size(czs_live_file)
+```
+
+```{r}
+targets::tar_read(sum_dead_frozen)
+targets::tar_read(sum_dead_live)
+```
+
+
+```{r readfile-frozen, message = FALSE}
+tar_load(czs_frozen_file)
+
+czs_frozen_file
+file.size(czs_frozen_file)
+```
+
+```{r read-data-frozen}
+targets::tar_read(czs_frozen)
+```
+
+```{r read-data-live}
+targets::tar_read(czs_live)
+```
+
+
+The `targets` dependency graph helps your readers understand the steps of your pipeline at a high level.
+
+```{r vis}
+tar_visnetwork()
+```
+
+At this point, you can go back and run `{targets}` chunks in interactive mode without interfering with the code or data of the non-interactive pipeline.

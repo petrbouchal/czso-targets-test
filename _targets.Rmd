@@ -1,0 +1,78 @@
+---
+title: "Target Markdown"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(targets)
+library(czso)
+```
+
+Target Markdown is a powerful R Markdown interface for reproducible analysis pipelines, and the chapter at https://books.ropensci.org/targets/markdown.html walks through it in detail. This R Markdown report the example from the chapter. Try it out in both interactive and non-interactive modes, either by running the code chunks in different ways or setting the `tar_interactive` chunk option.
+
+# Packages
+
+The example requires several R packages, and `targets` must be version 0.5.0.9000 or above. 
+
+```{r, eval = FALSE}
+install.packages(c("dplyr", "ggplot2", "readr", "targets", "tidyr", "czso", "visNetwork"))
+```
+
+# Setup
+
+If you are using old versions of `targets` (<= 0.7.0) and/or `knitr` (<= 1.33), you will need to load the `targets` package in the R Markdown document in order for Target Markdown code chunks to work.
+
+Near the top of the document, you may also wish to remove the `_targets_r` directory previously written by non-interactive runs of the report. Otherwise, your pipeline may contain superfluous targets.
+
+```{r clean}
+library(targets)
+tar_unscript()
+```
+
+# Globals
+
+We first define some global options/functions common to all targets. The function below plots a histogram of ozone concentrations, and our histogram target will need it.93.
+
+```{targets globals, tar_globals = TRUE}
+options(tidyverse.quiet = TRUE)
+tar_option_set(packages = c("dplyr", "readr", "tidyr", "czso"))
+```
+
+# Targets
+
+Our first target borrows the `airquality` dataset built into base R.
+
+```{targets frozen}
+czso:::czso_target_table(czs_frozen, "130185", dest_dir = "czs_frozen", freeze = TRUE)
+```
+
+
+```{targets live}
+czso:::czso_target_table(czs_live, "130185", dest_dir = "czs_live", freeze = FALSE)
+```
+
+Set the `tar_simple` chunk option to `TRUE` to define a single target with the command in the code chunk. The chunk below only contains `biglm(Ozone ~ Wind + Temp, data)` in the source, but because `tar_simple` is `TRUE`, it is shorthand for `tar_target(name = fit, command = biglm(Ozone ~ Wind + Temp, data))`. All other arguments to `tar_target()` are set to their default values (configurable with `tar_option_set()`).
+
+```{targets sum_dead_live, tar_simple = TRUE}
+sum(czs_live$hodnota, na.rm = TRUE)
+```
+
+```{targets sum_dead_frozen, tar_simple = TRUE}
+sum(czs_frozen$hodnota, na.rm = TRUE)
+```
+
+```{targets rmd}
+tarchetypes::tar_render(rmd, "index.Rmd", output_dir = "docs")
+```
+
+
+# Pipeline
+
+If you ran all the `{targets}` chunks in non-interactive mode, then your R scripts are set up to run the pipeline.
+
+```{r make}
+tar_make()
+```
+
+

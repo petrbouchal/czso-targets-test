@@ -1,0 +1,15 @@
+.targets-files
+_targets.html
+_targets/meta/.gitignore
+_targets_r/globals/globals.R
+_targets_r/targets/frozen.R
+_targets_r/targets/live.R
+_targets_r/targets/rmd.R
+_targets_r/targets/sum_dead_frozen.R
+_targets_r/targets/sum_dead_live.R
+czs_frozen/130185/ds_130185.csv
+czs_live/130185/ds_130185.csv
+docs/index.html
+_targets/meta/meta
+_targets/meta/process
+_targets/meta/progress
