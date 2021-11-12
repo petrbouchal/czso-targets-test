@@ -113,7 +113,7 @@ jobs:
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
-          git config advice.addIgnoredFile false
+          git config --local advice.addIgnoredFile false
           rm -r .gitignore .github/workflows
           git add --all -- ':!renv'
           for file in $(git ls-files -mo --exclude=renv)
