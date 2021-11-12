@@ -127,7 +127,8 @@ jobs:
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
-          git config advice.addIgnoredFile false
+          git config --local advice.addIgnoredFile false
+          git checkout main
           git add docs
           git commit -am "HTML output"
           git push origin main
