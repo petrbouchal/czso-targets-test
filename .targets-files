@@ -1,4 +1,5 @@
 .targets-files
+.targets-runs/
 _targets.html
 _targets/meta/.gitignore
 _targets_r/globals/globals.R
