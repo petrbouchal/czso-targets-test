@@ -128,8 +128,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git config --local advice.addIgnoredFile false
-          git checkout main
-          git add docs
+          git add docs/index.html
           git commit -am "HTML output"
           git push origin main
 
