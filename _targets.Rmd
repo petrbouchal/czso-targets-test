@@ -55,11 +55,11 @@ czso:::czso_target_table(czs_live, "130185", dest_dir = "czs_live", freeze = FAL
 Set the `tar_simple` chunk option to `TRUE` to define a single target with the command in the code chunk. The chunk below only contains `biglm(Ozone ~ Wind + Temp, data)` in the source, but because `tar_simple` is `TRUE`, it is shorthand for `tar_target(name = fit, command = biglm(Ozone ~ Wind + Temp, data))`. All other arguments to `tar_target()` are set to their default values (configurable with `tar_option_set()`).
 
 ```{targets sum_dead_live, tar_simple = TRUE}
-sum(czs_live_data$hodnota, na.rm = TRUE)
+sum(czs_live$hodnota, na.rm = TRUE)
 ```
 
 ```{targets sum_dead_frozen, tar_simple = TRUE}
-sum(czs_frozen_data$hodnota, na.rm = TRUE)
+sum(czs_frozen$hodnota, na.rm = TRUE)
 ```
 
 ```{targets rmd}

@@ -44,11 +44,11 @@ file.size(czs_frozen_file)
 ```
 
 ```{r read-data-frozen}
-targets::tar_read(czs_frozen_data)
+targets::tar_read(czs_frozen)
 ```
 
 ```{r read-data-live}
-targets::tar_read(czs_live_data)
+targets::tar_read(czs_live)
 ```
 
 
