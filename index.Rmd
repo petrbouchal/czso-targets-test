@@ -1,12 +1,16 @@
 ---
-title: "Untitled"
-author: "Petr Bouchal"
-date: "11/9/2021"
+title: "Test"
 output: html_document
 ---
 
 ```{r}
 library(targets)
+```
+
+Last built:
+
+```{r}
+Sys.time()
 ```
 
 
