@@ -7,5 +7,4 @@ czs_live|stem|czs_live|0|skipped
 czs_frozen|stem|czs_frozen|0|skipped
 sum_dead_live|stem|sum_dead_live|0|skipped
 sum_dead_frozen|stem|sum_dead_frozen|0|skipped
-rmd|stem|rmd|0|started
-rmd|stem|rmd|0|built
+rmd|stem|rmd|0|skipped
