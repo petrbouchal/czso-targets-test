@@ -123,15 +123,6 @@ jobs:
           git commit -am "Run pipeline"
           git push origin targets-runs
 
-      - name: Upload HTML
-        run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git config --local advice.addIgnoredFile false
-          git add docs/index.html
-          git commit -am "HTML output"
-          git push origin main
-
       - name: Prepare failure artifact
         if: failure()
         run: rm -rf .git .github .targets-files .targets-runs
