@@ -5650,12 +5650,12 @@ pre code {
 <pre class="r"><code>library(targets)</code></pre>
 <p>Last built:</p>
 <pre class="r"><code>Sys.time()</code></pre>
-<pre><code>## [1] &quot;2021-11-16 12:17:52 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2021-11-30 09:57:28 UTC&quot;</code></pre>
 <div id="output" class="section level1">
 <h1>Output</h1>
 <p>You can retrieve results from the <code>_targets/</code> data store using <code>tar_read()</code> or <code>tar_load()</code>.</p>
 <pre class="r"><code>tar_read(czs_live_url)</code></pre>
-<pre><code>## [1] &quot;https://www.czso.cz/documents/62353418/155512365/130185-21data111621.csv&quot;</code></pre>
+<pre><code>## [1] &quot;https://www.czso.cz/documents/62353418/155512361/130185-21data113021.csv&quot;</code></pre>
 <pre class="r"><code>tar_read(czs_frozen_url)</code></pre>
 <pre><code>## [1] &quot;https://www.czso.cz/documents/62353418/155512385/130185-21data110221.csv&quot;</code></pre>
 <pre class="r"><code>tar_load(czs_live_file)
@@ -5663,11 +5663,11 @@ pre code {
 czs_live_file</code></pre>
 <pre><code>## [1] &quot;czs_live/130185/ds_130185.csv&quot;</code></pre>
 <pre class="r"><code>file.size(czs_live_file)</code></pre>
-<pre><code>## [1] 458151</code></pre>
+<pre><code>## [1] 459819</code></pre>
 <pre class="r"><code>targets::tar_read(sum_dead_frozen)</code></pre>
 <pre><code>## [1] 2431070</code></pre>
 <pre class="r"><code>targets::tar_read(sum_dead_live)</code></pre>
-<pre><code>## [1] 2440008</code></pre>
+<pre><code>## [1] 2448954</code></pre>
 <pre class="r"><code>tar_load(czs_frozen_file)
 
 czs_frozen_file</code></pre>
@@ -5691,7 +5691,7 @@ czs_frozen_file</code></pre>
 ## # … with 3,910 more rows, and 5 more variables: roktyden &lt;chr&gt;,
 ## #   casref_od &lt;dttm&gt;, casref_do &lt;dttm&gt;, vek_txt &lt;chr&gt;, priznak &lt;chr&gt;</code></pre>
 <pre class="r"><code>targets::tar_read(czs_live)</code></pre>
-<pre><code>## # A tibble: 3,934 × 14
+<pre><code>## # A tibble: 3,948 × 14
 ##    idhod  hodnota stapro_kod vek_cis vek_kod   vuzemi_cis vuzemi_kod   rok tyden
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;
 ##  1 83245…       9 5393       7700    40000061… 97         19          2011 01   
@@ -5704,12 +5704,12 @@ czs_frozen_file</code></pre>
 ##  8 83245…      13 5393       7700    40000061… 97         19          2011 02   
 ##  9 83246…      34 5393       7700    41001561… 97         19          2011 02   
 ## 10 83246…     432 5393       7700    41004061… 97         19          2011 02   
-## # … with 3,924 more rows, and 5 more variables: roktyden &lt;chr&gt;,
+## # … with 3,938 more rows, and 5 more variables: roktyden &lt;chr&gt;,
 ## #   casref_od &lt;dttm&gt;, casref_do &lt;dttm&gt;, vek_txt &lt;chr&gt;, priznak &lt;chr&gt;</code></pre>
 <p>The <code>targets</code> dependency graph helps your readers understand the steps of your pipeline at a high level.</p>
 <pre class="r"><code>tar_visnetwork()</code></pre>
 <div id="htmlwidget-39b50851fc49ff3d67bd" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-39b50851fc49ff3d67bd">{"x":{"nodes":{"name":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","started","uptodate","uptodate"],"seconds":[0.041,0.308,0.503,0.175,0.537,0.119,4.41,0.001,0.001],"bytes":[31432,456483,0,31508,458151,0,1506156,51,53],"branches":[null,null,null,null,null,null,null,null,null],"id":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"label":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"level":[3,2,1,3,2,1,5,4,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#DC863B","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["czs_live","czs_frozen","czs_live_url","czs_frozen_file","czs_live_file","czs_frozen_url","czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","sum_dead_frozen","sum_dead_live"],"to":["sum_dead_live","sum_dead_frozen","czs_live_file","czs_frozen","czs_live","czs_frozen_file","rmd","rmd","rmd","rmd","rmd","rmd","rmd","rmd"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Started","Stem"],"color":["#354823","#DC863B","#899DA4"],"shape":["dot","dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-39b50851fc49ff3d67bd">{"x":{"nodes":{"name":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","started","uptodate","uptodate"],"seconds":[0.041,0.241,0.503,0.139,0.285,0.097,4.988,0.001,0.001],"bytes":[31432,456483,0,31625,459819,0,1506157,51,53],"branches":[null,null,null,null,null,null,null,null,null],"id":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"label":["czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","rmd","sum_dead_frozen","sum_dead_live"],"level":[3,2,1,3,2,1,5,4,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#DC863B","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["czs_live","czs_frozen","czs_live_url","czs_frozen_file","czs_live_file","czs_frozen_url","czs_frozen","czs_frozen_file","czs_frozen_url","czs_live","czs_live_file","czs_live_url","sum_dead_frozen","sum_dead_live"],"to":["sum_dead_live","sum_dead_frozen","czs_live_file","czs_frozen","czs_live","czs_frozen_file","rmd","rmd","rmd","rmd","rmd","rmd","rmd","rmd"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Started","Stem"],"color":["#354823","#DC863B","#899DA4"],"shape":["dot","dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
 <p>At this point, you can go back and run <code>{targets}</code> chunks in interactive mode without interfering with the code or data of the non-interactive pipeline.</p>
 </div>
 
